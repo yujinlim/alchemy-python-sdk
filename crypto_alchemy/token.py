@@ -1,4 +1,4 @@
-from alchemy.models import TokenBalancesResponse, TokenMetadata
+from crypto_alchemy.models import TokenBalancesResponse, TokenMetadata
 
 
 class TokenAPI():

@@ -1,6 +1,6 @@
 import requests
-from alchemy.network import Network, get_network_url
-from alchemy.token import TokenAPI
+from crypto_alchemy.network import Network, get_network_url
+from crypto_alchemy.token import TokenAPI
 
 
 class Client:
