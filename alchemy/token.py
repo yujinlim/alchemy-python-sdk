@@ -15,16 +15,13 @@ class TokenAPI():
         if token_specs and len(token_specs):
             params.append(token_specs)
 
-        headers = {
-            "Content-Type": "application/json",
-        }
         payload = {
             "jsonrpc": "2.0",
             "id": 1,
             "method": "alchemy_getTokenBalances",
             "params": params,
         }
-        response = self.client.session.post(url, json=payload, headers=headers)
+        response = self.client.session.post(url, json=payload)
         response.raise_for_status()
         data = response.json()
         if "result" in data:
@@ -37,9 +34,6 @@ class TokenAPI():
             return self.metadata_cache[contract_address]
         
         url = self.client.base_url
-        headers = {
-            "Content-Type": "application/json",
-        }
         payload = {
             "jsonrpc": "2.0",
             "id": 1,
@@ -48,7 +42,7 @@ class TokenAPI():
                 contract_address,
             ],
         }
-        response = self.client.session.post(url, json=payload, headers=headers)
+        response = self.client.session.post(url, json=payload)
         response.raise_for_status()
         data = response.json()
         if "result" in data:

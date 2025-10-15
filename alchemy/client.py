@@ -10,4 +10,7 @@ class Client:
     self.base_url = get_network_url(network) + api_key
 
     self.session = requests.Session()
+    self.session.headers.update({
+        "Content-Type": "application/json",
+    })
     self.token = TokenAPI(self)
