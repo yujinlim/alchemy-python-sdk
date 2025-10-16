@@ -58,7 +58,3 @@ pytest
 ## License
 
 Apache License 2.0
-
-## Support
-
-For API support, contact: cs@1stDigital.com
