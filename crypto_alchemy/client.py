@@ -1,6 +1,8 @@
 import requests
+from crypto_alchemy.chain import ChainAPI
 from crypto_alchemy.network import Network, get_network_url
 from crypto_alchemy.token import TokenAPI
+from crypto_alchemy.transfer import TransferAPI
 
 
 class Client:
@@ -14,3 +16,5 @@ class Client:
         "Content-Type": "application/json",
     })
     self.token = TokenAPI(self)
+    self.transfer = TransferAPI(self)
+    self.chain = ChainAPI(self)
